@@ -1,3 +1,4 @@
+/*Замінює степінь в форматі 10^x, де x - будь-яке число на html теги для коректного відображення в FastReport*/
 SET TERM ^ ;
 
 create or alter procedure SOI_INSERT_SUP (
