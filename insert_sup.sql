@@ -1,4 +1,4 @@
-/*Замінює степінь в форматі 10^x, де x - будь-яке число на html теги для коректного відображення в FastReport*/
+/*Замінює степінь в форматі y^x, де x,y - будь-яке число, на html теги для коректного відображення в FastReport*/
 SET TERM ^ ;
 
 create or alter procedure SOI_INSERT_SUP (
@@ -34,7 +34,7 @@ begin
       CH = substring(TEXT_IN from I for 1);
     end
     STEP = substring(TEXT_IN from FS for (I - FS));
-    TEMP = replace(TEMP, '10^' || STEP, '10<sup>' || STEP || '</sup>');
+    TEMP = replace(TEMP, '^' || STEP, '<sup>' || STEP || '</sup>');
   end
 I = I + 1;
 end
